@@ -58,4 +58,48 @@ Key Benefits of Authentication:
 > Prevents unauthorized access.
 > Offers a personalized experience for users.
 
+
 By following these steps, we aim to build a reliable and secure e-commerce platform using the MERN stack.
+
+# MILESTONE 2
+
+This is a full-stack e-commerce application with a frontend built using Vite, Tailwind CSS, and React, and a backend for handling API requests.
+
+## Project Setup and Login Page
+
+In this milestone, we focused on setting up the initial front-end structure and implementing the login page for the application. Key achievements include:
+
+Front-End Framework: Set up the React framework with Vite for a fast and modern development experience. Folder Structure: Organized the src folder to include separate directories for components, pages, and assets to improve scalability and maintainability. Login Page Implementation: Developed a basic login page (Login.jsx) that includes a user interface for email and password input. Incorporated validation logic to ensure proper user input. Routing: Implemented React Router for navigation and created routes for the login and signup pages. Styling: Added basic styling using CSS (App.css) to ensure a clean and user-friendly design. Git Integration: Added the new files to version control and committed progress to the GitHub repository. This milestone lays the groundwork for creating the front-end interface and interaction logic for the application.
+
+## Project Structure
+
+## Features
+- **Frontend**:
+  - Built with [Vite](https://vitejs.dev/) for fast development.
+  - Styled using [Tailwind CSS](https://tailwindcss.com/).
+  - Configured with ESLint and Stylelint for code quality.
+
+## Setup and Installation
+```bash
+git clone <repository_url>
+cd Ecommerce_FollowAlong
+cd frontend
+npx tailwindcss init
+npm init -y
+npm install
+git branch milestone2
+git checkout milestone2
+git add .
+git commit "commit message"
+git push -u origin milestone2
+```
+and pull the request from your github account.
+
+
+
+
+
+
+
+
+
