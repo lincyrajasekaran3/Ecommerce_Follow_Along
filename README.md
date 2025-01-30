@@ -95,65 +95,71 @@ git push -u origin milestone2
 ```
 and pull the request from your github account.
 
-# Milestone 3: Project Setup for Backend
+## Milestone 3: Project Setup for Backend
 
-In this milestone, the foundational backend structure for the e-commerce application was successfully established. Key achievements include:
+### Objectives
+In this milestone, we focused on setting up the backend structure, initializing a Node.js server, connecting the application to MongoDB, and implementing basic error handling.
 
-Backend Folder Structure:
-Organized the project into clearly defined folders (config, controller, db, middleware, model, and utility) to ensure scalability and maintainability.
-Database Integration:
-Set up a connection to MongoDB using Mongoose, enabling seamless interaction with the database.
-Environment Configuration
-Implemented a .env file to securely manage sensitive data such as database credentials, ensuring better security practices.
-Middleware Implementation
-Created essential middleware for authentication, error handling, and asynchronous error management to streamline request processing and ensure robust error handling.
-Utility Functions
--Added reusable utility components like a custom error handler to improve consistency and simplify debugging.
+### Achievements
 
-Git Integration
-Configured version control with Git and included a .gitignore file to exclude sensitive files and unnecessary folders like node_modules.
-This milestone sets up a solid backend foundation for further development, including API implementation, user authentication, and business logic handling. It ensures that the project is structured, secure, and ready for future expansion.
+#### 1. Backend Folder Structure
+We created a structured hierarchy for organizing backend code effectively:
+- *routes/*: Contains route files to define API endpoints.
+- *controllers/*: Handles the business logic for API requests.
+- *models/*: Contains MongoDB schemas and models.
+- *middleware/*: Includes middleware functions for tasks like authentication or logging.
+- *utils/*: Stores utility functions for reusable logic (to be expanded later).
+- *config/*: Contains configuration files like database connection settings.
+- *app.js*: Main application file for configuring the server.
+- *server.js*: Entry point for starting the Node.js server.
+
+#### 2. Server Setup
+- Initialized a Node.js server using Express.
+- Configured the server to listen on a designated port (e.g., http://localhost:5000).
+
+#### 3. Database Connection
+- Connected the server to MongoDB using the Mongoose library.
+- Verified the connection between the server and MongoDB.
+
+#### 4. Basic Error Handling
+- Implemented middleware to handle errors and provide clear error messages for better debugging.
+- Ensured the server does not crash on unexpected errors.
+
+---
+
+### Milestone 4: Creating User Model and Controller
+
+- Designed the User model with fields such as name, email, password, and role.
+- Implemented user authentication and authorization mechanisms.
+- Used bcrypt for password hashing and JWT for authentication.
+- Integrated Multer for handling file uploads (e.g., profile images).
+- Updated API routes for user management.
+- Improved error handling and validation for user-related operations.
 
 
-# Milestone 4: Creating User Model and Controller
+---
 
-In this milestone, the focus was on implementing the user model and controller for managing user data and operations in the backend. Key achievements include:
+### Milestone 5: Creating the Signup Page
 
-User Model:
-Created a User schema using Mongoose to define the structure for storing user information in the MongoDB database.
-Fields include essential user details such as name, email, password, and timestamps.
-Added validation for required fields and unique constraints for the email field.
-Password Hashing:
-Implemented password hashing using bcrypt to securely store user passwords in the database.
-User Controller:
-Developed a user controller to handle user-related backend operations such as registration and login.
-Added methods for creating new users and retrieving user details.
-API Endpoints:
-Set up API routes for user-related operations, including:
-/api/users/register: Endpoint to register a new user.
-/api/users/login: Endpoint to authenticate a user.
-Error Handling:
-Added error handling for scenarios such as duplicate email registration and invalid login credentials.
-Git Integration:
-Committed progress to version control, ensuring proper documentation of changes and updates.
-This milestone provides the necessary backend infrastructure to manage user data, supporting future features like user authentication and authorization.
+- Developed a user-friendly signup page using React.
+- Integrated form validation to ensure valid user input.
+- Connected the frontend with the backend API for user registration.
+- Displayed appropriate error and success messages.
+- Styled the page using modern UI components for a seamless user experience.
 
-# Milestone 5: Creating the Signup Page
 
-In this milestone, we focused on developing the signup page to enable users to create an account within the application. Key achievements include:
-Signup Page Implementation:
-Developed the Signup.jsx component with a user-friendly interface for account registration.
-Included form fields for user details such as name, email, and password.
-Form Validation:
-Added client-side validation logic to ensure proper input formatting and error messages for invalid entries.
-Integration with Routing:
-Configured navigation to and from the signup page using React Router for seamless user flow.
-Styling:
-Enhanced the design of the signup page to align with the application's overall styling for a consistent user experience.
-Code Organization:
-Refactored the code into reusable components where possible to promote cleaner and more maintainable code.
-This milestone enhances the user experience by allowing new users to register, paving the way for further integration with back-end user authentication systems.
+---
 
+## Milestone 6: What Was Achieved
+
+In this milestone, we completed the following:
+
+- Implemented advanced product filtering and search functionality.
+- Optimized backend API endpoints for better performance.
+- Integrated payment processing using Stripe.
+- Enhanced user authentication with JWT expiration handling.
+- Improved UI/UX by refining product pages and checkout flows.
+- Fixed bugs from previous milestones and improved error handling.
 
 
 
