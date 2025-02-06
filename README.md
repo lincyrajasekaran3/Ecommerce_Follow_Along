@@ -1,5 +1,5 @@
 # Ecommerce_Follow_Along
-Milestone 1 Project Overview: Building an E-commerce App with the MERN Stack
+# Milestone 1 Project Overview: Building an E-commerce App with the MERN Stack
 
 This project is a mentor-guided session focused on creating a complete e-commerce web application using the MERN stack. The goal is to gain practical experience in developing real-world web applications with features that are secure and scalable.
 
@@ -61,6 +61,8 @@ Key Benefits of Authentication:
 
 By following these steps, we aim to build a reliable and secure e-commerce platform using the MERN stack.
 
+---
+
 # MILESTONE 2
 
 This is a full-stack e-commerce application with a frontend built using Vite, Tailwind CSS, and React, and a backend for handling API requests.
@@ -95,7 +97,7 @@ git push -u origin milestone2
 ```
 and pull the request from your github account.
 
-## Milestone 3: Project Setup for Backend
+# MILESTONE 3: Project Setup for Backend
 
 ### Objectives
 In this milestone, we focused on setting up the backend structure, initializing a Node.js server, connecting the application to MongoDB, and implementing basic error handling.
@@ -127,7 +129,7 @@ We created a structured hierarchy for organizing backend code effectively:
 
 ---
 
-### Milestone 4: Creating User Model and Controller
+# MILESTONE 4: Creating User Model and Controller
 
 - Designed the User model with fields such as name, email, password, and role.
 - Implemented user authentication and authorization mechanisms.
@@ -139,7 +141,7 @@ We created a structured hierarchy for organizing backend code effectively:
 
 ---
 
-### Milestone 5: Creating the Signup Page
+# MILESTONE 5: Creating the Signup Page
 
 - Developed a user-friendly signup page using React.
 - Integrated form validation to ensure valid user input.
@@ -150,7 +152,7 @@ We created a structured hierarchy for organizing backend code effectively:
 
 ---
 
-## Milestone 6: What Was Achieved
+# MILESTONE 6: What Was Achieved
 
 In this milestone, we completed the following:
 
@@ -160,6 +162,17 @@ In this milestone, we completed the following:
 - Enhanced user authentication with JWT expiration handling.
 - Improved UI/UX by refining product pages and checkout flows.
 - Fixed bugs from previous milestones and improved error handling.
+
+---
+
+# MILESTONE 7: User Login
+
+This milestone focused on implementing a secure user login endpoint. Key achievements include:
+
+* **Secure Password Handling:** Implemented bcrypt hashing for passwords, ensuring they are never stored in plain text.  This protects user credentials even in the event of a database breach.
+* **Credential Validation:**  Developed a login endpoint that validates user credentials by comparing the bcrypt hash of the entered password with the stored hash.
+* **User Authentication:** Successfully implemented user authentication based on validated credentials.  This allows the system to identify and authorize users.
+* **Improved Security:**  Enhanced overall application security by implementing secure password handling practices
 
 
 
