@@ -174,6 +174,46 @@ This milestone focused on implementing a secure user login endpoint. Key achieve
 * **User Authentication:** Successfully implemented user authentication based on validated credentials.  This allows the system to identify and authorize users.
 * **Improved Security:**  Enhanced overall application security by implementing secure password handling practices
 
+---
+
+# Milestone 8: Product Card Component
+
+## Overview
+
+In this milestone, I have implemented a reusable card component to showcase products dynamically on the homepage. The card component is designed to display product details such as name, image, and price in a structured layout.
+
+## Features
+
+*   **Reusable Card Component:** A dynamic component that accepts product details as props.
+*   **Dynamic Rendering:** Uses array mapping to render multiple product cards.
+*   **Responsive Layout:** Designed using Flexbox/Grid for a clean and structured display.
+*   **Improved User Experience:** Ensures a consistent and visually appealing product showcase.
+
+
+---
+
+# Milestone 9: Creating the Product Form
+In this milestone, we focused on building a form that allows users to add products, including support for multiple product images. Key achievements include:
+
+* Product Form Implementation: Designed and developed a form to capture essential product details, such as: Product Name Description Price Category Multiple Product Images (file upload support)
+* Image Upload Handling: Implemented functionality to allow multiple product images to be uploaded. Ensured proper validation for image formats and file sizes.
+* Data Management: Configured state management to handle form inputs efficiently. Validated user inputs before submission to ensure accurate product data.
+
+
+---
+
+# Milestone 10: Product Schema and Endpoint
+
+This milestone focuses on creating a Mongoose schema for products and building a POST endpoint to store product details in MongoDB.
+
+
+## Implementation
+
+*   **Product Schema:** The `product.js` file (or similar) defines the structure of product data (name, description, price, image URL, etc.) using Mongoose, with appropriate validation rules.
+*   **Endpoint:** A POST endpoint (`/products` or similar) handles incoming product data, validates it, and saves it to the MongoDB database.
+
+=======
+
 
 
 
