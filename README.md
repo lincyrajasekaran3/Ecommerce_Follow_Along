@@ -212,7 +212,20 @@ This milestone focuses on creating a Mongoose schema for products and building a
 *   **Product Schema:** The `product.js` file (or similar) defines the structure of product data (name, description, price, image URL, etc.) using Mongoose, with appropriate validation rules.
 *   **Endpoint:** A POST endpoint (`/products` or similar) handles incoming product data, validates it, and saves it to the MongoDB database.
 
-=======
+---
+
+# Milestone 11: Dynamic Product Display on Home Page
+
+## Overview
+
+This milestone focuses on making the home page display products dynamically by fetching data from the MongoDB database.  We will create a backend endpoint to retrieve product data and then use that data on the frontend to populate product cards.
+
+## Implementation Details
+
+*   The backend endpoint should use the appropriate MongoDB driver methods to retrieve all product documents.
+*   The frontend fetchProducts function should use fetch or a similar library to make the API call.
+*   The product card component should be designed to receive product data as props and display it accordingly.
+
 
 
 
