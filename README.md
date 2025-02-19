@@ -226,6 +226,39 @@ This milestone focuses on making the home page display products dynamically by f
 *   The frontend fetchProducts function should use fetch or a similar library to make the API call.
 *   The product card component should be designed to receive product data as props and display it accordingly.
 
+----
+
+# Milestone 12: My Products Page
+
+## Overview
+
+This milestone focuses on creating the "My Products" page, which displays all the products added by a specific user (identified by their email).  We will implement a backend endpoint to retrieve these products from MongoDB, filter them by email, and send them to the frontend.  The frontend will then dynamically display these products using the existing product card component.
+
+## Learning Goals
+
+*   Write an endpoint that filters data in MongoDB based on a user's email and sends the results to the frontend.
+*   Receive data on the frontend.
+*   Dynamically display the received data using the product card component.
+
+---
+
+# Milestone 13: Product Editing Functionality
+
+
+## Overview
+
+This project is a step-by-step implementation of an e-commerce platform.  Each milestone focuses on adding specific features and building upon the previous ones.  The current focus is on managing product data, including adding, displaying, and editing products.  The project utilizes a MongoDB database to store product information and a frontend interface to interact with the data through API endpoints.
+
+*   Implemented the ability to edit existing product data.
+*   Added an "Edit" button to product cards on the frontend.
+*   Developed a backend endpoint to handle updating product details in the MongoDB database.
+*   Implemented form auto-filling with existing product data for editing.
+*   Users can now modify product information and save the changes.  This involved:
+    *   Creating an API endpoint to receive updated product data.
+    *   Implementing the update operation in MongoDB.
+    *   Adding an edit button to the product card.
+    *   Populating the edit form with existing product data.
+    *   Enabling users to edit and save the updated data.
 
 
 
