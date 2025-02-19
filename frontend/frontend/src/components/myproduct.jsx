@@ -68,6 +68,7 @@ function Myproduct({ _id, name, images, description, price }) {
 
             </div>
         </div>
+        
     );
 }
 
