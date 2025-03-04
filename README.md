@@ -282,6 +282,66 @@ By completing this milestone, we have:
 - Ensured smooth navigation between pages.
 - Made the Navbar responsive for all screen sizes.
 
+# Milestone 16 - Product Info Page
+
+## Project Overview 
+This milestone focuses on creating a product info page that displays all product details, allows users to select a quantity, and includes an "Add to Cart" button.
+
+## Learning Goals 
+By completing this milestone, I have learned:
+- How to create a new page to display product details.
+- How to add a quantity selection feature.
+- How to implement an "Add to Cart" button.
+
+---
+
+# Milestone 17: Cart Functionality
+
+## Overview
+
+In this milestone, we implemented the cart functionality by creating a schema to store products in the cart and an API endpoint to receive and store product details.
+
+## Achievements
+
+* **Created Cart Schema:**
+    * Designed a Mongoose schema to store cart items.
+    * Included product details like name, price, quantity, and user reference.
+* **Implemented API Endpoint:**
+    * Developed a route to add products to the cart.
+    * Handled requests to store product details in MongoDB.
+* **Database Integration:**
+    * Ensured cart items are stored and retrieved efficiently using MongoDB Atlas.
+* **Code Pushed to GitHub:**
+    * All changes have been committed and pushed to the repository.
+
+---
+
+# Milestone 18: Cart Functionality - Backend Endpoint
+
+## Overview
+
+This milestone focuses on developing the backend functionality required for the cart page. Specifically, we implemented an endpoint to receive requests from the cart page and retrieve all the products within a user's cart using their email address. This enhances the user experience by allowing them to view their selected items.
+
+## Learning Goals
+
+* Create an endpoint to receive requests from the cart page.
+* Develop a backend endpoint to fetch all products inside the cart using the user's email.
+* Understand the implementation of cart functionality in a backend system.
+
+## Implementation Details
+
+* **Endpoint Creation:**
+    * A new endpoint was created to handle requests from the cart page.
+    * This endpoint is designed to accept user email as a parameter.
+* **Data Retrieval:**
+    * Upon receiving a request, the backend retrieves the user's cart data from the database using the provided email.
+    * The endpoint then fetches all the product details corresponding to the items in the user's cart.
+    * The endpoint returns the product details in a JSON format.
+* **Error Handling:**
+    * Basic error handling was implemented to manage scenarios where the user's cart is empty or the user does not exist.
+
+---
+
 
 
 
