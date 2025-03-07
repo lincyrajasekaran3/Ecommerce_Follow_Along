@@ -5,7 +5,7 @@ const path = require("path");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
-const ErrorHandler = require("./middleware/error");
+const ErrorHandler = require("./middleware/Error");
 
 const app = express();
 
