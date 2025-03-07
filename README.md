@@ -342,6 +342,33 @@ This milestone focuses on developing the backend functionality required for the 
 
 ---
 
+#  Milestone 19: Designing a Component for Your Entity
+
+##  Project Overview
+This milestone focuses on building a *cart page UI* and implementing functionality to *increase and decrease product quantity* using backend endpoints.
+
+## 🎯 Learning Goals
+By the end of this milestone, I have:
+- Created a *cart frontend page* that displays products inside the cart.
+- Added *+ and - buttons* to update product quantity.
+- Built *backend endpoints* to increase and decrease product quantity.
+
+---
+
+# Milestone 20: Profile Page & Backend Endpoint
+
+## 📌 Project Overview
+This milestone focuses on building a *profile page UI* and implementing a *backend endpoint* to send user data.
+
+## 🎯 Learning Goals
+By the end of this milestone, I have:
+- Created a *profile frontend page* to display user details.
+- Displayed *profile photo, name, and email* in one section.
+- Displayed *address details* in another section with an *"Add Address" button*.
+- Implemented a *backend endpoint* to retrieve and send user data.
+- Handled the case where no address is found by displaying *"No address found"*.
+
+---
 
 
 
