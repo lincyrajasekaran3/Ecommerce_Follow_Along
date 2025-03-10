@@ -370,6 +370,28 @@ By the end of this milestone, I have:
 
 ---
 
+# Milestone 17: Cart Functionality  
+
+## Overview  
+In this milestone, we implemented cart functionality by creating a schema to store products in the cart and an API endpoint to receive and store product details.  
+
+## Achievements  
+
+* **Created Cart Schema:**  
+  - Designed a Mongoose schema to store cart items.  
+  - Included product details like name, price, quantity, and user reference.  
+
+* **Implemented API Endpoint:**  
+  - Developed a route to add products to the cart.  
+  - Handled requests to store product details in MongoDB.  
+
+* **Database Integration:**  
+  - Ensured cart items are stored and retrieved efficiently using MongoDB Atlas.  
+
+* **Code Pushed to GitHub:**  
+  - All changes have been committed and pushed to the repository.  
+
+---
 
 
 
