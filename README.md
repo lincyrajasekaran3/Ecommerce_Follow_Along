@@ -370,6 +370,38 @@ By the end of this milestone, I have:
 
 ---
 
+# Milestone 21: Creating an Address Form in Frontend
+
+## Project Overview
+
+This milestone focuses on building a frontend address form that collects user address details and integrates it into the profile section.
+
+## 🎯 Learning Goals
+
+By the end of this milestone, I have:
+- Created an address form in the frontend.
+- Collected country, city, address1, address2, zip code, and address type from the user.
+- Implemented a state to store input address data.
+- Added navigation from the profile section to the address form page when clicking on 'Add Address'.
+
+---
+
+# Milestone 22: Storing User Address in Database
+
+## Project Overview
+This milestone focuses on creating a backend endpoint that will receive and store user addresses inside their profile in the database.
+
+## 🎯 Learning Goals
+By the end of this milestone, I have:
+- Created an *API endpoint* to receive the address from the frontend.
+- Added the received address to the *address array* inside the user collection.
+- Implemented logic to *store multiple addresses* within the user profile.
+
+---
+
+
+
+
 
 
 
