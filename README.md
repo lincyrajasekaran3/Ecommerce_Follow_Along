@@ -421,6 +421,23 @@ In this milestone, we added order placement functionality and allowed users to s
 
 ---
 
+# Milestone 24: Order Confirmation & Placement  
+
+## Project Overview
+In this milestone, we finalized the order placement process, fetching the selected shipping address and cart items to confirm orders.  
+
+### 1. Frontend Updates: Order Confirmation Page  
+- Displayed the selected address and cart items.  
+- Showed the total price and payment method.  
+- Implemented the "Place Order" button to confirm orders.  
+
+### 2. Backend Updates: Order Processing  
+- Fetched user addresses and cart items via API.  
+- Sent order details (email, address, cart items) to the backend.  
+- Handled loading and error states for a smooth user experience.  
+
+---
+
 
 
 
