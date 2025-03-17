@@ -417,7 +417,7 @@ In this milestone, we added order placement functionality and allowed users to s
   - Order status (pending, shipped, delivered)  
   - Total price  
   - Timestamp  
-- Implemented an endpoint to store orders in the database.  
+- Implemented an endpoint to store orders in the databases.  
 
 ---
 
