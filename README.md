@@ -399,6 +399,31 @@ By the end of this milestone, I have:
 
 ---
 
+# Milestone 23: Implementing Order Placement and Address Selection  
+
+## Project Overview
+In this milestone, we added order placement functionality and allowed users to select a delivery address.  
+
+### 1. Frontend Updates: Cart Page & Address Selection  
+- Added a "Place Order" button inside the cart page, navigating to the Select Address Page.  
+- Displayed all saved addresses for the user.  
+- Allowed users to select an address for order delivery.  
+
+### 2. Backend Updates: Order Schema & Storage  
+- Created a Mongoose schema to store order details, including:  
+  - User ID (to associate orders with users)  
+  - Product details (items in the cart)  
+  - Selected delivery address  
+  - Order status (pending, shipped, delivered)  
+  - Total price  
+  - Timestamp  
+- Implemented an endpoint to store orders in the database.  
+
+---
+
+
+
+
 
 
 
