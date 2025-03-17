@@ -438,6 +438,15 @@ In this milestone, we finalized the order placement process, fetching the select
 
 ---
 
+# Milestone 25: Order Placement & Address Selection
+
+## Learning Goals 🎯
+- Add a "Place Order" button to the cart page. Create an address selection page. Store order details using Mongoose.
+- Backend Updates 🛠 User ID, product details, address. Order status, total price, timestamp. API endpoint to store orders.
+
+---
+
+
 
 
 
