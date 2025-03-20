@@ -1,50 +1,42 @@
-const express = require('express');
-const router = express.Router();
-const Order = require('../model/order'); // Adjust path as needed
-const User = require('../model/user');   // Adjust path as needed
+// backend/app.js
 
-router.post('/place-order', async (req, res) => {
-    try {
-        const { email, orderItems, shippingAddress } = req.body;
+const express = require("express");
+const path = require("path");
+const cors = require("cors");
+const cookieParser = require("cookie-parser");
+const bodyParser = require("body-parser");
+const ErrorHandler = require("./middleware/error");
 
-        // Validate request data
-        if (!email) {
-            return res.status(400).json({ message: 'Email is required.' });
-        }
-        if (!orderItems || !Array.isArray(orderItems) || orderItems.length === 0) {
-            return res.status(400).json({ message: 'Order items are required.' });
-        }
-        if (!shippingAddress) {
-            return res.status(400).jon({ message: 'Shipping address is required.' });
-        }
+const app = express();
 
-        // Retrieve user _id from the user collection using the provided email
-        const user = await User.findOne({ email });
-        if (!user) {
-            return res.status(404).json({ message: 'User not found.' });
-        }
+// Middleware
+app.use(express.json());
+app.use(cookieParser());
 
-        // Create separate orders for each order item
-        const orderPromises = orderItems.map(async (item) => {
-            const totalAmount = item.price * item.quantity;
-            const order = new Order({
-                user: user._id,
-                orderItems: [item], // Each order contains a single item
-                shippingAddress,
-                totalAmount,
-            });
-            return order.save();
-        });
+// Configure CORS to allow requests from React frontend
+app.use(cors({
+  // origin: 'http://localhost:3000', // Update this if your frontend is hosted elsewhere
+  origin:'*',
+  credentials: true, // Enable if you need to send cookies or authentication headers
+}));
 
-        const orders = await Promise.all(orderPromises);
+app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 
-        // Clear user's cart after placing orders (assuming a Cart model exists)
-      //  await Cart.deleteMany({ user: user._id });
+// Serve static files for uploads and products
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use('/products', express.static(path.join(__dirname, 'products')));
 
-        res.status(201).json({ message: 'Orders placed and cart cleared successfully.', orders });
-    } catch (error) {
-        console.error('Error placing orders:', error);
-        res.status(500).json({ message: error.message });
-    }
-});
-module.exports = router;
+// Import Routes
+const userRoutes = require("./controller/user");
+const productRoutes = require('./controller/product');
+const orders = require('./controller/orders');
+
+// Route Handling
+app.use("/api/v2/user", userRoutes);
+app.use("/api/v2/product", productRoutes);
+app.use("/api/v2/orders", orders);
+
+// Error Handling Middleware
+app.use(ErrorHandler);
+
+module.exports = app;
