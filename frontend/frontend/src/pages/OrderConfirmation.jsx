@@ -1,15 +1,14 @@
-// eslint-disable-next-line no-unused-vars
+/* eslint-disable no-unused-vars */
+// OrderConfirmation.jsx
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Nav from '../components/nav';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-
 const OrderConfirmation = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const { addressId, email } = location.state || {};
-
 
     const [selectedAddress, setSelectedAddress] = useState(null);
     const [cartItems, setCartItems] = useState([]);
@@ -17,26 +16,22 @@ const OrderConfirmation = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-
     useEffect(() => {
         if (!addressId || !email) {
             navigate('/select-address'); // Redirect if no address selected or email missing
             return;
         }
 
-
         const fetchData = async () => {
             try {
                 // Fetch selected address
-                const addressResponse = await axios.get('http://localhost:5000/api/v2/user/addresses', {
+                const addressResponse = await axios.get('http://localhost:8000/api/v2/user/addresses', {
                     params: { email: email },
                 });
-
 
                 if (addressResponse.status !== 200) {
                     throw new Error(`Failed to fetch addresses. Status: ${addressResponse.status}`);
                 }
-
 
                 const addressData = addressResponse.data;
                 const address = addressData.addresses.find(addr => addr._id === addressId);
@@ -45,31 +40,26 @@ const OrderConfirmation = () => {
                 }
                 setSelectedAddress(address);
 
-
                 // Fetch cart products from /cartproducts endpoint
-                const cartResponse = await axios.get('http://localhost:5000/api/v2/product/cartproducts', {
+                const cartResponse = await axios.get('http://localhost:8000/api/v2/product/cartproducts', {
                     params: { email: email },
                 });
-
 
                 if (cartResponse.status !== 200) {
                     throw new Error(`Failed to fetch cart products. Status: ${cartResponse.status}`);
                 }
 
-
                 const cartData = cartResponse.data;
-
 
                 // Map cart items to include full image URLs
                 const processedCartItems = cartData.cart.map(item => ({
                     _id: item.productId._id,
                     name: item.productId.name,
                     price: item.productId.price,
-                    images: item.productId.images.map(imagePath => `http://localhost:5000${imagePath}`),
+                    images: item.productId.images.map(imagePath => `http://localhost:8000${imagePath}`),
                     quantity: item.quantity,
                 }));
                 setCartItems(processedCartItems);
-
 
                 // Calculate total price
                 const total = processedCartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
@@ -82,33 +72,36 @@ const OrderConfirmation = () => {
             }
         };
 
-
         fetchData();
     }, [addressId, email, navigate]);
 
-
     const handlePlaceOrder = async () => {
         try {
-            setLoading(true);
-            const response = await axios.post('http://localhost:5000/api/v2/order/place', {
+            // Map cartItems to match the backend expected format
+            const orderItems = cartItems.map(item => ({
+                product: item._id,
+                name: item.name,
+                quantity: item.quantity,
+                price: item.price,
+                image: item.images && item.images.length > 0 ? item.images[0] : '/default-avatar.png'
+            }));
+
+            // Construct payload with email, shippingAddress, and orderItems
+            const payload = {
                 email,
-                addressId,
-            });
+                shippingAddress: selectedAddress,
+                orderItems,
+            };
 
+            // Send POST request to place orders
+            const response = await axios.post('http://localhost:8000/api/v2/orders/place-order', payload);
+            console.log('Orders placed successfully:', response.data);
 
-            if (response.status !== 200 && response.status !== 201) {
-                throw new Error(response.data.message || 'Failed to place order.');
-            }
-
-
-            const data = response.data;
-            console.log('Order placed:', data.order);
-            navigate('/order-success', { state: { order: data.order } });
-        } catch (err) {
-            console.error('Error placing order:', err);
-            setError(err.response?.data?.message || err.message || 'An unexpected error occurred while placing the order.');
-        } finally {
-            setLoading(false);
+            // Navigate to an order success page or display a success message
+            navigate('/order-success'); // Adjust route as needed
+        } catch (error) {
+            console.error('Error placing order:', error);
+            // Optionally update error state to display an error message to the user
         }
     };
 
@@ -116,11 +109,10 @@ const OrderConfirmation = () => {
     if (loading) {
         return (
             <div className='w-full h-screen flex justify-center items-center'>
-                <p className='text-lg'>Processing..</p>
+                <p className='text-lg'>Processing...</p>
             </div>
         );
     }
-
 
     if (error) {
         return (
@@ -136,14 +128,12 @@ const OrderConfirmation = () => {
         );
     }
 
-
     return (
         <div className='w-full min-h-screen flex flex-col'>
             <Nav />
             <div className='flex-grow flex justify-center items-start p-4'>
                 <div className='w-full max-w-4xl border border-neutral-300 rounded-md flex flex-col p-6 bg-white shadow-md'>
                     <h2 className='text-2xl font-semibold mb-6 text-center'>Order Confirmation</h2>
-
 
                     {/* Selected Address */}
                     <div className='mb-6'>
@@ -160,7 +150,6 @@ const OrderConfirmation = () => {
                             <p>No address selected.</p>
                         )}
                     </div>
-
 
                     {/* Cart Items */}
                     <div className='mb-6'>
@@ -192,12 +181,10 @@ const OrderConfirmation = () => {
                         )}
                     </div>
 
-
                     {/* Total Price */}
                     <div className='mb-6 flex justify-end'>
                         <p className='text-xl font-semibold'>Total: ${totalPrice.toFixed(2)}</p>
                     </div>
-
 
                     {/* Payment Method */}
                     <div className='mb-6'>
@@ -206,7 +193,6 @@ const OrderConfirmation = () => {
                             <p>Cash on Delivery</p>
                         </div>
                     </div>
-
 
                     {/* Place Order Button */}
                     <div className='flex justify-center'>
@@ -222,6 +208,5 @@ const OrderConfirmation = () => {
         </div>
     );
 };
-
 
 export default OrderConfirmation;

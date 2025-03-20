@@ -446,6 +446,26 @@ In this milestone, we finalized the order placement process, fetching the select
 
 ---
 
+# Milestone 26: Order API & Confirmation Page  
+
+## Learning Goals 🎯  
+- Implement order placement API.  
+- Fetch user orders from the database.  
+- Create an order confirmation page.  
+
+## Backend Updates 🛠️  
+- Order API: Place order, fetch user orders.  
+- Stores User ID, product details, address, total price.  
+- API endpoint for order confirmation.  
+
+## Frontend Updates 🖥️  
+- "Place Order" button in cart.  
+- Address selection before order confirmation.  
+- Fetch and display order details on confirmation page.
+
+---
+
+
 
 
 

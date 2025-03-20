@@ -5,7 +5,7 @@ const path = require("path");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
-const ErrorHandler = require("./middleware/Error");
+const ErrorHandler = require("./middleware/error");
 
 const app = express();
 
@@ -29,10 +29,12 @@ app.use('/products', express.static(path.join(__dirname, 'products')));
 // Import Routes
 const userRoutes = require("./controller/user");
 const productRoutes = require('./controller/product');
+const orders = require('../backend/controller/order');
 
 // Route Handling
 app.use("/api/v2/user", userRoutes);
 app.use("/api/v2/product", productRoutes);
+app.use("/api/v2/orders", orders);
 
 // Error Handling Middleware
 app.use(ErrorHandler);
