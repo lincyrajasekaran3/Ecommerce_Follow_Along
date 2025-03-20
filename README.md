@@ -465,7 +465,22 @@ In this milestone, we finalized the order placement process, fetching the select
 
 ---
 
+# Milestone 27: My Products & Order Management  
 
+## Learning Goals 🎯  
+- Fetch and display user-specific products.  
+- Implement API to retrieve user orders.  
+- Enable order cancellation functionality.  
+
+## Backend Updates 🛠️  
+- **My Products API:** Fetch products based on user email.  
+- **Order API:** Retrieve user orders using email.  
+- **Cancel Order API:** Update order status to "Cancelled".  
+
+## Frontend Updates 🖥️  
+- "My Products" page displaying user products in a grid.  
+- Loading and error handling for product fetching.  
+- "Cancel Order" functionality integrated with API. 
 
 
 
