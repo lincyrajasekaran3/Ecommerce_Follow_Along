@@ -29,7 +29,7 @@ app.use('/products', express.static(path.join(__dirname, 'products')));
 // Import Routes
 const userRoutes = require("./controller/user");
 const productRoutes = require('./controller/product');
-const orders = require('./controller/orders');
+const orders = require('../backend/controller/order');
 
 // Route Handling
 app.use("/api/v2/user", userRoutes);
