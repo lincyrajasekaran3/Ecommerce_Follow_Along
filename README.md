@@ -482,6 +482,25 @@ In this milestone, we finalized the order placement process, fetching the select
 - Loading and error handling for product fetching.  
 - "Cancel Order" functionality integrated with API. 
 
+# Milestone 28: Order Cancellation
+
+## Learning Goals 🎯  
+- Allow users to cancel placed orders.  
+- Implement a "Cancel Order" button for active orders.  
+- Create an API to update order status to "Cancelled".  
+
+## Backend Updates 🛠️  
+- **Cancel Order API:** Accept order ID and update status.  
+- **Order Validation:** Ensure only active orders can be canceled.  
+- **Database Update:** Save canceled status in the database.  
+
+## Frontend Updates 🖥️  
+- Add a "Cancel Order" button on the `my-orders` page.  
+- Hide the button for already canceled orders.  
+- Implement loading and error handling for order cancellation.  
+
+---
+
 
 
 
