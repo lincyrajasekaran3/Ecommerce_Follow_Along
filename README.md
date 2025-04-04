@@ -524,7 +524,8 @@ In this milestone, we finalized the order placement process, fetching the select
 # Milestone 30: PayPal Payment Integration & Navigation Enhancements
 
 ## Learning Goals 🎯  
-we successfully integrated PayPal for seamless online payments and improved the application's navigation.  
+- we successfully integrated PayPal for seamless online payments 
+- improved the application's navigation.  
 
 ## Steps for Milestone 30 📝 
 - PayPal Integration: Configured a sandbox account, installed `react-paypal-js`, and implemented PayPal's API for secure transactions.  
@@ -532,6 +533,22 @@ we successfully integrated PayPal for seamless online payments and improved the 
 - Responsive Design: Used CSS Flexbox and media queries to ensure adaptability across all screen sizes, with a hamburger menu for mobile users.
 
 ---
+
+# Milestone 31: Global State Management with Redux
+
+## Learning Goals 🎯  
+- Integrate Redux for global state management.  
+- Manage user email across the application.
+
+## Redux Setup 🛠️  
+- Installed `react-redux` for centralized state handling.  
+- Created a `store` folder with:  
+  - `store.js`: Configured Redux store using `userReducer`.  
+  - `userActions.js`: Defined `setEmail` action for updating user email.
+
+## App Integration 🖥️  
+- Wrapped `App` with `Provider` in `index.js`.  
+- Passed the store to enable global access to email state..
 
 
 
