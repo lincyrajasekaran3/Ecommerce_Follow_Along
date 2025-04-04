@@ -521,6 +521,19 @@ In this milestone, we finalized the order placement process, fetching the select
 
 ---
 
+# Milestone 30: PayPal Payment Integration & Navigation Enhancements
+
+## Learning Goals 🎯  
+we successfully integrated PayPal for seamless online payments and improved the application's navigation.  
+
+## Steps for Milestone 30 📝 
+- PayPal Integration: Configured a sandbox account, installed `react-paypal-js`, and implemented PayPal's API for secure transactions.  
+- Navigation Component: Built a responsive Nav component with React Router for smooth navigation across key pages (Home, My Products, Add Product, Cart).  
+- Responsive Design: Used CSS Flexbox and media queries to ensure adaptability across all screen sizes, with a hamburger menu for mobile users.
+
+---
+
+
 
 
 
