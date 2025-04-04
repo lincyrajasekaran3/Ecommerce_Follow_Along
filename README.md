@@ -480,7 +480,9 @@ In this milestone, we finalized the order placement process, fetching the select
 ## Frontend Updates 🖥️  
 - "My Products" page displaying user products in a grid.  
 - Loading and error handling for product fetching.  
-- "Cancel Order" functionality integrated with API. 
+- "Cancel Order" functionality integrated with API.
+
+---
 
 # Milestone 28: Order Cancellation
 
@@ -498,6 +500,24 @@ In this milestone, we finalized the order placement process, fetching the select
 - Add a "Cancel Order" button on the `my-orders` page.  
 - Hide the button for already canceled orders.  
 - Implement loading and error handling for order cancellation.  
+
+---
+
+# Milestone 29: PayPal Integration
+
+## Learning Goals 🎯  
+- Learn how to use the PayPal API.  
+- Integrate online payments into the application.  
+
+## Steps for Milestone 29 📝  
+1. Create a PayPal account and access the PayPal Developer Dashboard.  
+2. Log in and locate the "Sandbox Accounts" section.  
+3. Copy the User ID of the sandbox account and save it.  
+4. Find the Client ID in the sandbox account and save it.  
+5. On the order confirmation page, provide two payment options: **Cash on Delivery (COD)** and **Online Payment**.  
+6. Implement radio buttons to select either COD or online payment.  
+7. When "Online Payment" is selected, display the PayPal payment buttons.  
+8. In the next milestone, we will implement the PayPal payment button functionality.  
 
 ---
 
