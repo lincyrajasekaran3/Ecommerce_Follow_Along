@@ -480,7 +480,101 @@ In this milestone, we finalized the order placement process, fetching the select
 ## Frontend Updates 🖥️  
 - "My Products" page displaying user products in a grid.  
 - Loading and error handling for product fetching.  
-- "Cancel Order" functionality integrated with API. 
+- "Cancel Order" functionality integrated with API.
+
+---
+
+# Milestone 28: Order Cancellation
+
+## Learning Goals 🎯  
+- Allow users to cancel placed orders.  
+- Implement a "Cancel Order" button for active orders.  
+- Create an API to update order status to "Cancelled".  
+
+## Backend Updates 🛠️  
+- **Cancel Order API:** Accept order ID and update status.  
+- **Order Validation:** Ensure only active orders can be canceled.  
+- **Database Update:** Save canceled status in the database.  
+
+## Frontend Updates 🖥️  
+- Add a "Cancel Order" button on the `my-orders` page.  
+- Hide the button for already canceled orders.  
+- Implement loading and error handling for order cancellation.  
+
+---
+
+# Milestone 29: PayPal Integration
+
+## Learning Goals 🎯  
+- Learn how to use the PayPal API.  
+- Integrate online payments into the application.  
+
+## Steps for Milestone 29 📝  
+1. Create a PayPal account and access the PayPal Developer Dashboard.  
+2. Log in and locate the "Sandbox Accounts" section.  
+3. Copy the User ID of the sandbox account and save it.  
+4. Find the Client ID in the sandbox account and save it.  
+5. On the order confirmation page, provide two payment options: **Cash on Delivery (COD)** and **Online Payment**.  
+6. Implement radio buttons to select either COD or online payment.  
+7. When "Online Payment" is selected, display the PayPal payment buttons.  
+8. In the next milestone, we will implement the PayPal payment button functionality.  
+
+---
+
+# Milestone 30: PayPal Payment Integration & Navigation Enhancements
+
+## Learning Goals 🎯  
+- we successfully integrated PayPal for seamless online payments 
+- improved the application's navigation.  
+
+## Steps for Milestone 30 📝 
+- PayPal Integration: Configured a sandbox account, installed `react-paypal-js`, and implemented PayPal's API for secure transactions.  
+- Navigation Component: Built a responsive Nav component with React Router for smooth navigation across key pages (Home, My Products, Add Product, Cart).  
+- Responsive Design: Used CSS Flexbox and media queries to ensure adaptability across all screen sizes, with a hamburger menu for mobile users.
+
+---
+
+# Milestone 31: Global State Management with Redux
+
+## Learning Goals 🎯  
+- Integrate Redux for global state management.  
+- Manage user email across the application.
+
+## Redux Setup 🛠️  
+- Installed `react-redux` for centralized state handling.  
+- Created a `store` folder with:  
+  - `store.js`: Configured Redux store using `userReducer`.  
+  - `userActions.js`: Defined `setEmail` action for updating user email.
+
+## App Integration 🖥️  
+- Wrapped `App` with `Provider` in `index.js`.  
+- Passed the store to enable global access to email state..
+
+---
+
+# Milestone 32: Redux Global State Management  
+
+## Learning Goals 🎯  
+- Use Redux Toolkit to manage global user state.  
+- Share user email across the app via Redux store.  
+
+## Setup & Configuration ⚙️  
+- Installed dependencies: `@reduxjs/toolkit`, `react-redux`.  
+- Created a `store` folder with:  
+  - `store.jsx`: Configures the Redux store.  
+  - `userActions.jsx`: Contains the action to set the user's email.  
+
+## Email State Management 📧  
+- Added `email` to global Redux state.  
+- Created action: `setemail(email)` to update the state.  
+
+## Integration with App 🔗  
+- Wrapped `<App />` with `<Provider>` to give Redux access throughout the app.  
+
+## Usage in Components 🧩  
+- **Get email:** `useSelector(state => state.user.email)`  
+- **Set email:** `dispatch(setemail(email))`
+
 
 
 

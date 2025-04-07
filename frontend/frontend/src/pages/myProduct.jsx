@@ -1,12 +1,13 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
+import { useSelector } from 'react-redux'; // Import useSelector
 import Myproduct from "../components/myproduct"; // <-- Import the Product component
 import Nav from "../components/nav";
 export default function MyProducts() {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const email = "akshara@gmail.com";
+    const email = useSelector((state) => state.user.email);
 
     useEffect(() => {
         fetch(`http://localhost:8000/api/v2/product/my-products?email=${email}`)
