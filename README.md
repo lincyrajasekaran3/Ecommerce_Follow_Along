@@ -575,6 +575,22 @@ In this milestone, we finalized the order placement process, fetching the select
 - **Get email:** `useSelector(state => state.user.email)`  
 - **Set email:** `dispatch(setemail(email))`
 
+---
+
+# Milestone 33: JWT Token & Cookie Storage
+
+## Learning Goals 🎯  
+- Create a JWT token.  
+- Store it in a browser cookie.
+
+## Steps 📝  
+1. Install: `npm install jsonwebtoken`  
+2. Use `jwt.sign()` to create token with email & ID.  
+3. Add `maxAge` to set expiry.  
+4. Store token using `res.cookie()`.
+
+
+---
 
 
 
