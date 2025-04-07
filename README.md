@@ -550,6 +550,31 @@ In this milestone, we finalized the order placement process, fetching the select
 - Wrapped `App` with `Provider` in `index.js`.  
 - Passed the store to enable global access to email state..
 
+---
+
+# Milestone 32: Redux Global State Management  
+
+## Learning Goals 🎯  
+- Use Redux Toolkit to manage global user state.  
+- Share user email across the app via Redux store.  
+
+## Setup & Configuration ⚙️  
+- Installed dependencies: `@reduxjs/toolkit`, `react-redux`.  
+- Created a `store` folder with:  
+  - `store.jsx`: Configures the Redux store.  
+  - `userActions.jsx`: Contains the action to set the user's email.  
+
+## Email State Management 📧  
+- Added `email` to global Redux state.  
+- Created action: `setemail(email)` to update the state.  
+
+## Integration with App 🔗  
+- Wrapped `<App />` with `<Provider>` to give Redux access throughout the app.  
+
+## Usage in Components 🧩  
+- **Get email:** `useSelector(state => state.user.email)`  
+- **Set email:** `dispatch(setemail(email))`
+
 
 
 

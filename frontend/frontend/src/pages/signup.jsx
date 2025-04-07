@@ -5,6 +5,8 @@ import styles from "../styles/styles";
 import { Link } from "react-router-dom";
 import { RxAvatar } from "react-icons/rx";
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { setemail } from "../store/userActions";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -14,7 +16,6 @@ const Signup = () => {
   const [avatar, setAvatar] = useState(null);
 
   const handleFileSubmit = (e) => {
-    console.log("handle submit function")
     const file = e.target.files[0];
     if (file) {
       const filePath = URL.createObjectURL(file);
@@ -22,18 +23,17 @@ const Signup = () => {
       setAvatar(file);
     }
   };
-
+   const dispatch = useDispatch();
+   dispatch(setemail(email));
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     const newForm = new FormData();
     newForm.append("file", avatar);
     newForm.append("name", name);
     newForm.append("email", email);
     newForm.append("password", password);
-    console.log("newform", newForm.entries())
-
-   
     const config = {
       headers: {
         "Content-Type": "multipart/form-data",
@@ -41,7 +41,8 @@ const Signup = () => {
       },
     };
 
-    axios.post("http://localhost:8000/api/v2/user/create-user", newForm, config).then((res) => {
+    axios.post("http://localhost:8000/api/v2/user/create-user", newForm, config)
+    .then((res) => {
       console.log(res.data);
     }).catch((err) => {
       console.log(err);
